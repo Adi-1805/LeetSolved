@@ -6,15 +6,13 @@ class Solution(object):
         :rtype: int
         """
         allowed = set(allowed)
-        ans = 0
+        count = 0
+
         for word in words:
-            flag = 1
-            for c in word:
-                if c not in allowed:
-                    flag = 0
+            for i in word:
+                if i not in allowed:
+                    count +=1
                     break
-            if flag == 1:
-                ans += 1
-        return ans; 
+        return len(words) - count
 
         
