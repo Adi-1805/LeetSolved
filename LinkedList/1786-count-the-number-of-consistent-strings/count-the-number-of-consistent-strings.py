@@ -5,9 +5,7 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
-        allowed = set(allowed)
         count = 0
-
         for word in words:
             for i in word:
                 if i not in allowed:
