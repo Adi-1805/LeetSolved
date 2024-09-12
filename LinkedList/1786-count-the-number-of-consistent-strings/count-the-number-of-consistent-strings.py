@@ -1,15 +1,20 @@
-class Solution:
+class Solution(object):
     def countConsistentStrings(self, allowed, words):
-        allowed_characters_set = set(allowed)
-        consistent_strings_count = 0
+        """
+        :type allowed: str
+        :type words: List[str]
+        :rtype: int
+        """
+        allowed = set(allowed)
+        ans = 0
         for word in words:
-            is_consistent = True  
-            for character in word:
-                if character not in allowed_characters_set:
-                    is_consistent = False  
-                    break  
-            
-            if is_consistent:
-                consistent_strings_count += 1
+            flag = 1
+            for c in word:
+                if c not in allowed:
+                    flag = 0
+                    break
+            if flag == 1:
+                ans += 1
+        return ans; 
+
         
-        return consistent_strings_count
