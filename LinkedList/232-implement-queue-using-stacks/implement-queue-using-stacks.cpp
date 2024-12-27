@@ -1,10 +1,6 @@
 class MyQueue {
-public:
     stack<int> input, output;
-    MyQueue() {
-
-    }
-    
+public:
     void push(int x) {
         // pop everything out of i/p stack and push in o/p stack
         while (!input.empty()) {
