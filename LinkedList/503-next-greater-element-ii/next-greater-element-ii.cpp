@@ -3,7 +3,6 @@ public:
     vector<int> nextGreaterElements(vector<int>& nums) {
         int n = nums.size();
         stack<int> st; st.push(INT_MAX);
-        unordered_map<int,int> mp;
         vector<int> result;
         for(int i = 2*n-1; i >= 0; i--){
             int curNum = nums[i%n];
