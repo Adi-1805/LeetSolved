@@ -22,14 +22,14 @@ public:
             auto [curNode, lvl] = q.front();
             q.pop();
 
-            mp[lvl] = curNode;
+            if(mp.find(lvl) == mp.end()) mp[lvl] = curNode;
 
-            if(curNode -> left != NULL){
-                q.push({curNode->left, lvl+1});
-            }
             if(curNode -> right != NULL){
                 q.push({curNode->right, lvl+1});
             }   
+            if(curNode -> left != NULL){
+                q.push({curNode->left, lvl+1});
+            }
         }
         vector<int> result;
         for(auto it: mp){
